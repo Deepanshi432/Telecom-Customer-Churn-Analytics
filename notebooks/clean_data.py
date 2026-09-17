@@ -13,7 +13,7 @@ print("Original shape:", df.shape)
 df.columns = df.columns.str.strip()
 
 # Convert TotalCharges to numeric
-# Blank/invalid values become NaN
+# Invalid/blank values become NaN
 df["TotalCharges"] = pd.to_numeric(
     df["TotalCharges"],
     errors="coerce"
@@ -22,7 +22,7 @@ df["TotalCharges"] = pd.to_numeric(
 # Customers with tenure = 0 have no accumulated charges
 df["TotalCharges"] = df["TotalCharges"].fillna(0)
 
-# Remove duplicate records
+# Remove duplicate records if any
 df = df.drop_duplicates()
 
 # Save cleaned dataset

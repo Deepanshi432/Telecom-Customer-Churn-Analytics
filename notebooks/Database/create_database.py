@@ -4,5 +4,6 @@ import sqlite3
 connection = sqlite3.connect("database/telecom_churn.db")
 
 print("SQLite database created successfully!")
+7`
 
 connection.close()
